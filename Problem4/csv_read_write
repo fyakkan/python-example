@@ -1,0 +1,13 @@
+import pandas as pd
+
+def filter_and_save_csv(input_file, output_file):
+    df = pd.read_csv(input_file)
+
+    filtered_df = df[(df['LatD'] >= 35) & (df['LatD'] < 45)]
+
+    filtered_df.to_csv(output_file, index=False)
+
+input_csv_file = r'C:\Users\Furkan\Desktop\python example\Problem4\cities.csv'
+output_csv_file = r'cities_filtered.csv'
+
+filter_and_save_csv(input_csv_file, output_csv_file)
